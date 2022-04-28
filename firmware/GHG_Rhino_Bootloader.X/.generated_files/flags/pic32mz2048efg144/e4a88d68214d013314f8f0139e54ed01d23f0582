@@ -1,0 +1,1 @@
+ $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fno-common -I"../src" -I"../src/config/pic32mz2048efg144" -Werror -Wall   -DXPRJ_pic32mz2048efg144=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  C:\Firmware\H3 Apps\GHG\Rhino_GHG_Bootloader\firmware\src\main.c

@@ -1,0 +1,19 @@
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+container : sathishdevops49/mplabx:version5.0
+
+steps :
+- script : pwd
+- script : ls /opt/microchip/mplabx/v6.00/mplab_platform/bin
+- script : /opt/microchip/mplabx/v6.00/mplab_platform/bin/prjMakefilesGenerator.sh /__w/1/s/firmware/GHG_Rhino_Bootloader.X/
+- script : cd firmware/GHG_Rhino_Bootloader.X/
+- script : make -f nbproject/Makefile-pic32mz2048efg144.mk SUBPROJECTS= .build-conf
+
